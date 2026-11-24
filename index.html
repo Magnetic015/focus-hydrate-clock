@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>专注补水钟</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>专注补水钟</h1>
+    <p class="sub">番茄专注 × 定时喝水：每专注一轮，提醒你喝一口水</p>
+  </header>
+
+  <section class="card timer">
+    <div id="phase" class="phase">准备开始</div>
+    <div id="clock" class="clock">25:00</div>
+    <div class="bar"><div id="progress"></div></div>
+    <div class="btns">
+      <button id="start">开始</button>
+      <button id="pause" class="ghost">暂停</button>
+      <button id="skip" class="ghost">跳过本段</button>
+      <button id="reset" class="ghost">重置</button>
+    </div>
+    <div id="tip" class="tip"></div>
+  </section>
+
+  <section class="card">
+    <h2>今日补水</h2>
+    <div class="cup"><div id="water"></div><span id="waterText">0 / 2000 ml</span></div>
+    <div class="btns">
+      <button data-ml="100" class="sip">+100 ml</button>
+      <button data-ml="200" class="sip">+200 ml</button>
+      <button data-ml="300" class="sip">+300 ml</button>
+    </div>
+    <p id="summary" class="muted"></p>
+  </section>
+
+  <section class="card">
+    <h2>设置</h2>
+    <form id="settings" class="grid">
+      <label>体重 (kg)<input type="number" id="weight" value="60" min="20" max="200"></label>
+      <label>专注 (分钟)<input type="number" id="focus" value="25" min="1" max="90"></label>
+      <label>短休 (分钟)<input type="number" id="rest" value="5" min="1" max="30"></label>
+      <label>长休 (分钟)<input type="number" id="longRest" value="15" min="1" max="60"></label>
+      <label>每几轮长休<input type="number" id="longEvery" value="4" min="1" max="10"></label>
+      <label>计划轮数<input type="number" id="rounds" value="8" min="1" max="16"></label>
+      <button type="submit">生成今日计划</button>
+    </form>
+    <ol id="plan" class="plan"></ol>
+  </section>
+  <footer class="muted">数据只保存在本机浏览器（localStorage），不联网。</footer>
+</main>
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

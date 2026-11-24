@@ -1,0 +1,7 @@
+{
+  "name": "focus-hydrate",
+  "version": "1.0.0",
+  "description": "专注补水钟：番茄专注与定时喝水提醒的纯前端小工具",
+  "scripts": { "test": "node --test test/logic.test.js", "start": "python3 -m http.server 8080" },
+  "license": "MIT"
+}
